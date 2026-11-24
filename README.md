@@ -95,13 +95,16 @@ A larger internal harness for delegating work to coding agents, where the rule
 "done means the gate says 0" replaced long checklists in prompts. This is the
 small, portable core of it.
 
-## The full version
+## The full version (free)
 
-proof-gate is the light version. The full method adds acceptance tests written
-before the work starts, task packs, a ladder from the smallest model upwards and
-a ledger of every verdict. If you want to hear when it's published, watch this
-repo (Watch → Custom → Releases), or leave your email at
-[cachly.dev/forge](https://cachly.dev/forge?utm_source=github&utm_medium=readme&utm_campaign=proof-gate).
-One mail when it's out, nothing else.
+proof-gate is the light version. The full method is the **Agent Proof Kit**:
+acceptance written before the work starts, a task pack template, a ladder from
+the smallest model upwards, a ledger script that counts the red runs per task,
+rules to paste into CLAUDE.md or AGENTS.md, and a GitHub Actions workflow. One
+ZIP, MIT, free.
+
+Leave your email at
+[cachly.dev/forge](https://cachly.dev/forge?utm_source=github&utm_medium=readme&utm_campaign=proof-gate)
+and the download link arrives after you confirm. One mail, no series.
 
 MIT. Made by Heinrich Neb (cachly.dev).
