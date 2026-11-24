@@ -1,5 +1,7 @@
 # proof-gate
 
+[![test](https://github.com/cachly-dev/proof-gate/actions/workflows/test.yml/badge.svg)](https://github.com/cachly-dev/proof-gate/actions/workflows/test.yml)
+
 **A task is done when `proof-gate <task>` exits 0. Not when the AI writes "done".**
 
 My AI once told me, with real confidence, that it had added a safety check.
@@ -20,6 +22,10 @@ Then it writes a receipt: commit, time, every command and its exit code. Your AI
 pastes the receipt instead of the word "done".
 
 ## Try it in two minutes
+
+The fastest way: clone the repo and run the [rate-limit example](examples/rate-limit), which also shows the three ways agents fake a green result and what the gate prints for each.
+
+In your own project:
 
 ```bash
 npx github:cachly-dev/proof-gate lock rate-limit     # you pin the acceptance files once, then commit

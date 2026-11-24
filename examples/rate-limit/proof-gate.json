@@ -1,0 +1,17 @@
+{
+  "tasks": {
+    "rate-limit": {
+      "locked": ["test/rate-limit.test.mjs"],
+      "checks": [
+        { "name": "acceptance", "run": "node --test test/rate-limit.test.mjs" }
+      ],
+      "controls": [
+        {
+          "name": "says no to the version without the limit",
+          "run": "node --test test/rate-limit.test.mjs",
+          "env": { "RATE_LIMIT_DISABLED": "1" }
+        }
+      ]
+    }
+  }
+}

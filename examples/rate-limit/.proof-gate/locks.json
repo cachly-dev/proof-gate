@@ -1,0 +1,5 @@
+{
+  "rate-limit": {
+    "test/rate-limit.test.mjs": "e017233845dd887b431ef2cae52bf149a12b9fbf044fefd9acbf77b4c88c3a8d"
+  }
+}
