@@ -10,11 +10,11 @@
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { posix } from 'node:path';
 
 const CONFIG = 'proof-gate.json';
 const DIR = '.proof-gate';
-const LOCKS = join(DIR, 'locks.json');
+const LOCKS = posix.join(DIR, 'locks.json');
 const TAIL_LINES = 20;
 
 function print(task, code, detail, receipt, note) {
@@ -73,8 +73,20 @@ const [first, second] = process.argv.slice(2);
 const isLock = first === 'lock';
 const taskId = isLock ? second : first;
 
+const USAGE = [
+  'usage: proof-gate <task>        run checks and controls, write a receipt',
+  '       proof-gate lock <task>   pin the acceptance files (then commit .proof-gate/locks.json)',
+  'config: proof-gate.json in the current directory, see https://github.com/cachly-dev/proof-gate',
+  'exit: 0 = green, 1 = red, 2 = refused',
+].join('\n');
+
+if (first === '--help' || first === '-h' || first === 'help') {
+  console.log(USAGE);
+  process.exit(0);
+}
+
 if (!taskId) {
-  console.log('usage: proof-gate <task> | proof-gate lock <task>');
+  console.log(USAGE);
   process.exit(2);
 }
 
@@ -139,8 +151,8 @@ const receipt = {
   checks: checkResults,
   controls: controlResults,
 };
-mkdirSync(join(DIR, 'receipts'), { recursive: true });
-const receiptPath = join(DIR, 'receipts', `${taskId}.json`);
+mkdirSync(posix.join(DIR, 'receipts'), { recursive: true });
+const receiptPath = posix.join(DIR, 'receipts', `${taskId}.json`);
 writeFileSync(receiptPath, `${JSON.stringify(receipt, null, 2)}\n`);
 
 print(taskId, code, `${green}/${total}`, receiptPath.replace(/\\/g, '/'), problems[0] ?? '');
