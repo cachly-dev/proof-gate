@@ -94,6 +94,8 @@ small, portable core of it.
 proof-gate is the light version. The full method adds acceptance tests written
 before the work starts, task packs, a ladder from the smallest model upwards and
 a ledger of every verdict. If you want to hear when it's published, watch this
-repo (Watch → Custom → Releases).
+repo (Watch → Custom → Releases), or leave your email at
+[cachly.dev/forge](https://cachly.dev/forge?utm_source=github&utm_medium=readme&utm_campaign=proof-gate).
+One mail when it's out, nothing else.
 
 MIT. Made by Heinrich Neb (cachly.dev).
