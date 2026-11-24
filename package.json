@@ -1,0 +1,13 @@
+{
+  "name": "proof-gate",
+  "version": "0.1.0",
+  "description": "A task is done when the gate exits 0, not when the AI says done. Checks, controls that must fail, locked acceptance tests, receipts.",
+  "type": "module",
+  "bin": { "proof-gate": "proof-gate.mjs" },
+  "files": ["proof-gate.mjs", "README.md", "LICENSE"],
+  "scripts": { "test": "node --test test/proof-gate.test.mjs" },
+  "engines": { "node": ">=18" },
+  "keywords": ["ai", "coding-agent", "claude-code", "guardrails", "ci", "testing"],
+  "license": "MIT",
+  "author": "Heinrich Neb"
+}
